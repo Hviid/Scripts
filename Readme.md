@@ -1,1 +1,1 @@
-[a relative link](GetDatabaseCPUTime.md)
+[Get Info about database CPU time distribution](GetDatabaseCPUTime.md)
