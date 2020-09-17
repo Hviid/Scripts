@@ -1,0 +1,16 @@
+```SQL
+SELECT [query_store_query].query_id AS query_store_query_id,
+       [sys].[query_store_query].query_text_id AS query_store_query_text_id,
+       batch_sql_handle AS query_store_batch_sql_handle,
+       [sys].[query_store_plan].query_plan_hash AS query_store_query_plan_hash,
+       sql_handle,
+       plan_handle,
+       [sys].[dm_exec_requests].query_hash,
+       [sys].[dm_exec_requests].query_plan_hash,
+       [sys].[dm_exec_requests].statement_sql_handle
+FROM [sys].[dm_exec_requests]
+LEFT JOIN [sys].[query_store_query] ON [sys].[dm_exec_requests].query_hash = [query_store_query].query_hash
+LEFT JOIN [sys].[query_store_query_text] ON [query_store_query].query_text_id = [query_store_query_text].[query_text_id]
+LEFT JOIN [sys].[query_store_plan] ON [sys].[query_store_query].query_id = [sys].[query_store_plan].query_id
+WHERE session_id = @id
+```
