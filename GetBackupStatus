@@ -17,5 +17,5 @@ SELECT r.session_id AS [Session_Id]
             ))
 FROM sys.dm_exec_requests r
 WHERE command like 'RESTORE%'
-or  command like 'BACKUP%'
+or  command like 'BACKUP%' 
 ```
