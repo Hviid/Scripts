@@ -1,6 +1,6 @@
 [Get Info about database CPU time distribution](GetDatabaseCPUTime.md)  
 [Get backup status](GetBackupStatus.md)  
-[Get index ALTER status](GetIndexAlterStatus.md)
+[Get index ALTER status](GetIndexAlterStatus.md)  
 [Get indexes](GetIndexes.md)  
 [Get indexes stats](GetIndexStats.md)  
 [Get missing indexes](GetMissingIndexes.md)  
