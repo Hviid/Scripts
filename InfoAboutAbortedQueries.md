@@ -1,3 +1,4 @@
+```SQL
 SELECT TOP (1000) [runtime_stats_id]
       --,[plan_id]
 	  ,query_id
