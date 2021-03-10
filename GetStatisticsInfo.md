@@ -1,12 +1,12 @@
 ```SQL
 SELECT 
-stats.name AS StatisticsName,
-OBJECT_SCHEMA_NAME(stats.object_id) AS SchemaName,
-OBJECT_NAME(stats.object_id) AS TableName,
-last_updated AS LastUpdated, [rows] AS [Rows],
-rows_sampled, steps, modification_counter AS ModCounter,
-persisted_sample_percent PersistedSamplePercent,
-(rows_sampled * 100)/rows AS SamplePercent
+  stats.name AS StatisticsName,
+  OBJECT_SCHEMA_NAME(stats.object_id) AS SchemaName,
+  OBJECT_NAME(stats.object_id) AS TableName,
+  last_updated AS LastUpdated, [rows] AS [Rows],
+  rows_sampled, steps, modification_counter AS ModCounter,
+  persisted_sample_percent PersistedSamplePercent,
+  (rows_sampled * 100)/rows AS SamplePercent
 FROM sys.stats
 INNER JOIN sys.stats_columns sc
 ON stats.stats_id = sc.stats_id AND stats.object_id = sc.object_id
