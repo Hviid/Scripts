@@ -16,3 +16,8 @@ Memory Req's
 Available Stats  
 \# of Rows Affected  
 Existing Indexes  
+
+
+
+### Brent Ozar on ORM's  
+https://youtu.be/YHgWBg2iGVw?t=146211
