@@ -18,4 +18,8 @@ EQ_ROWSy / Total ROWS = PropY
 The predicates in the equation are ordered from most selective(fewest rows) => PropLeast to least(most rows)  => PropMost
 EQ_ROWSPropLeast * SQRT(PropMost) * Total ROWS = Estimate
 
-### OBS New - No ascending key problem
+## Old - Ascending key problem  
+Always guesses 1
+
+## New - No ascending key problem
+0,3 * Mod_counter = Estimate
