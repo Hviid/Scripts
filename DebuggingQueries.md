@@ -17,7 +17,10 @@ Available Stats
 \# of Rows Affected  
 Existing Indexes  
 
-
+## Query do's and dont's
+| Do              | Don't               |
+| -------------   |:-------------:      |
+| Use TempDB      | Don't use variables |
 
 ### Brent Ozar on ORM's  
 https://youtu.be/YHgWBg2iGVw?t=146211
