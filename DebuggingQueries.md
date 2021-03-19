@@ -18,9 +18,9 @@ Available Stats
 Existing Indexes  
 
 ## Query do's and dont's
-| Do              | Don't               |
-| -------------   |:-------------:      |
-| Use TempDB      | Don't use variables |
+| Do              | Don't                      |
+| -------------   |:-------------:             |
+| Use TempDB      | Don't use table variables  |
 
 ### Brent Ozar on ORM's  
 https://youtu.be/YHgWBg2iGVw?t=146211
