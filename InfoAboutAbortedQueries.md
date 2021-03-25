@@ -1,12 +1,11 @@
 ```SQL
 SELECT TOP (1000) [runtime_stats_id]
-      --,[plan_id]
 	  ,query_id
       ,[runtime_stats_interval_id]
       ,[execution_type]
       ,[execution_type_desc]
       ,[first_execution_time]
-      --,[last_execution_time]
+      ,[query_store_plan].[last_execution_time]
       ,[count_executions]
       ,[avg_duration]
       ,[last_duration]
@@ -56,6 +55,6 @@ SELECT TOP (1000) [runtime_stats_id]
   FROM [amphi].[sys].[query_store_runtime_stats] 
   LEFT JOIN [amphi].[sys].[query_store_plan]
   ON [amphi].[sys].[query_store_runtime_stats].plan_id = [amphi].[sys].[query_store_plan].plan_id 
-  WHERE [amphi].[sys].[query_store_runtime_stats].last_execution_time > @datetime AND execution_type_desc = 'Aborted'
+  WHERE [amphi].[sys].[query_store_runtime_stats].last_execution_time > DATEADD(minute, -5, GETUTCDATE()) AND execution_type_desc = 'Aborted'
   order by [amphi].[sys].[query_store_runtime_stats].last_execution_time desc
   ```
