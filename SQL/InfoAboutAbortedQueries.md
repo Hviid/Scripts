@@ -52,9 +52,9 @@ SELECT TOP (1000) [runtime_stats_id]
       ,[min_rowcount]
       ,[max_rowcount]
       ,[stdev_rowcount]
-  FROM [amphi].[sys].[query_store_runtime_stats] 
-  LEFT JOIN [amphi].[sys].[query_store_plan]
-  ON [amphi].[sys].[query_store_runtime_stats].plan_id = [amphi].[sys].[query_store_plan].plan_id 
-  WHERE [amphi].[sys].[query_store_runtime_stats].last_execution_time > DATEADD(minute, -5, GETUTCDATE()) AND execution_type_desc = 'Aborted'
-  order by [amphi].[sys].[query_store_runtime_stats].last_execution_time desc
+  FROM [sys].[query_store_runtime_stats] 
+  LEFT JOIN [sys].[query_store_plan]
+  ON [sys].[query_store_runtime_stats].plan_id = [sys].[query_store_plan].plan_id 
+  WHERE [sys].[query_store_runtime_stats].last_execution_time > DATEADD(minute, -5, GETUTCDATE()) AND execution_type_desc = 'Aborted'
+  order by [sys].[query_store_runtime_stats].last_execution_time desc
   ```
